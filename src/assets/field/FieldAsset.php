@@ -4,7 +4,7 @@ namespace froala\craftfroalawysiwyg\assets\field;
 
 use craft\web\AssetBundle;
 use froala\craftfroalawysiwyg\assets\froala\FroalaAsset;
-use froala\craftfroalawysiwyg\Plugin;
+use froala\craftfroalawysiwyg\FroalaEditor;
 
 /**
  * Class FieldAsset
@@ -42,8 +42,8 @@ class FieldAsset extends AssetBundle
      */
     private function loadCustomCSS()
     {
-        $customCssType = Plugin::getInstance()->getSettings()->customCssType;
-        $customCssFile = Plugin::getInstance()->getSettings()->customCssFile;
+        $customCssType = FroalaEditor::getInstance()->getSettings()->customCssType;
+        $customCssFile = FroalaEditor::getInstance()->getSettings()->customCssFile;
 
         if (!empty($customCssFile)) {
 

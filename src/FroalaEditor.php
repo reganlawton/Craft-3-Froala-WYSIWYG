@@ -10,7 +10,7 @@ use froala\craftfroalawysiwyg\traits\PluginEventsTrait;
 /**
  * Class Plugin
  */
-class Plugin extends \craft\base\Plugin
+class FroalaEditor extends \craft\base\Plugin
 {
     use PluginComponentsTrait;
     use PluginEventsTrait;

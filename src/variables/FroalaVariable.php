@@ -14,6 +14,6 @@ class FroalaVariable
      */
     public function name(): string
     {
-        return Plugin::getInstance()->name;
+        return FroalaEditor::getInstance()->name;
     }
 }

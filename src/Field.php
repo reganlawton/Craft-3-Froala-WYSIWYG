@@ -57,7 +57,7 @@ class Field extends \craft\base\Field
     {
         parent::init();
 
-        $this->pluginSettings = Plugin::getInstance()->getSettings();
+        $this->pluginSettings = FroalaEditor::getInstance()->getSettings();
     }
 
     /**
@@ -76,7 +76,7 @@ class Field extends \craft\base\Field
         return Craft::$app->getView()->renderTemplate('froala-editor/field/settings', [
             'field'               => $this,
             'pluginSettings'      => $this->pluginSettings,
-            'editorConfigOptions' => Plugin::getInstance()->getCustomConfigOptions('froalaeditor'),
+            'editorConfigOptions' => FroalaEditor::getInstance()->getCustomConfigOptions('froalaeditor'),
         ]);
     }
 
@@ -103,7 +103,7 @@ class Field extends \craft\base\Field
                 throw new \Exception('Image and File sources are not properly configured for this field.');
             }
 
-            $fieldService = Plugin::getInstance()->getFieldService();
+            $fieldService = FroalaEditor::getInstance()->getFieldService();
             $fieldService->setElement($element);
 
             $pluginSettings = $this->pluginSettings->toArray();
@@ -129,8 +129,8 @@ class Field extends \craft\base\Field
                         ],
                         "language" => FroalaAsset::getLanguage(),
                     ],
-                    Plugin::getInstance()->getCustomConfig('editorConfig', 'froalaeditor', $pluginSettings),
-                    Plugin::getInstance()->getCustomConfig('editorConfig', 'froalaeditor', $this->getSettings())
+                    FroalaEditor::getInstance()->getCustomConfig('editorConfig', 'froalaeditor', $pluginSettings),
+                    FroalaEditor::getInstance()->getCustomConfig('editorConfig', 'froalaeditor', $this->getSettings())
                 ),
                 'pluginSettings' => $pluginSettings,
                 'fieldSettings' => $this->getSettings(),

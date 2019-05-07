@@ -32,7 +32,7 @@ class SettingsController extends Controller
             return $this->redirect('froala-editor/settings/general');
         }
 
-        $plugin = Plugin::getInstance();
+        $plugin = FroalaEditor::getInstance();
         $variables = [
             'settings' => $plugin->getSettings(),
         ];
